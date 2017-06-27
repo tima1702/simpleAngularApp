@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+    <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script>
+
+
+        </script>
+        <script src="first.js"></script>
+
+        <style>
+            .error{
+                border-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div ng-controller="firstController as first">
+        <h1>Пример 7</h1>
+        <div>
+            <select ng-model="data.select" ng-options="option.homeName for option in data.home track by option._id">
+            </select>
+            <hr>
+            <!--<tt>model = {{data.select | json}}</tt><br/>-->
+            <span>
+                <input type="text" ng-model="data.select.homeName" id="input" >
+                <input type="button" value="Изменить" ng-click="first.changeName(data.select);" >
+            </span>
+            <!--<input type="button" ng-click="first.test()">-->
+        </div>
+        <h1>Пример 2-7</h1>
+        <div>
+            <select ng-model="data.selectNum" ng-options="option for option in data.numbers" ng-change="first.change()">
+            </select>
+            <hr>
+            <!--<tt>model = {{data.select | json}}</tt><br/>-->
+            <span>
+                <input type="button" value="Добавить" ng-click="first.addNum();" >
+            </span>
+            <!--<input type="button" ng-click="first.test()">-->
+        </div>
+        </div>
+    </body>
+</html>
